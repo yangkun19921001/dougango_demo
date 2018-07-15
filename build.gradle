@@ -1,0 +1,35 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+//        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        //Gradle Android Maven plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        //Gradle Bintray Plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+
+        //图片选择控件需要的
+        classpath 'com.novoda:bintray-release:0.5.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+//        google()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+            // Alternative URL is 'https://dl.google.com/dl/android/maven2/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
